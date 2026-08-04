@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>민준 · 서연 결혼식에 초대합니다</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FAF6EF;
+    --forest:#3A4F3F;
+    --forest-deep:#28362C;
+    --rose:#C79A8E;
+    --gold:#B08D57;
+    --charcoal:#33322D;
+    --sage:#E4E7DC;
+    --line:rgba(51,50,45,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--forest-deep);
+    color:var(--charcoal);
+    font-family:'Noto Sans KR', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    max-width:480px;
+    margin:0 auto;
+    background:var(--ivory);
+    overflow:hidden;
+    position:relative;
+  }
+  .section{
+    padding:88px 32px;
+    position:relative;
+  }
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:500;
+    text-align:center;
+  }
+  .fade-in{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity 0.9s ease, transform 0.9s ease;
+  }
+  .fade-in.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .fade-in{ opacity:1; transform:none; transition:none; }
+    html{ scroll-behavior:auto; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:64px 32px;
+    background:
+      radial-gradient(circle at 50% 18%, rgba(176,141,87,0.10), transparent 55%),
+      var(--ivory);
+  }
+  .wreath{
+    width:230px;
+    height:230px;
+    margin-bottom:8px;
+  }
+  .hero .eyebrow{ margin-bottom:2px; }
+  .hero-names{
+    font-family:'Noto Serif KR', serif;
+    font-size:34px;
+    font-weight:500;
+    color:var(--forest-deep);
+    letter-spacing:0.02em;
+    margin:14px 0 6px;
+    line-height:1.35;
+  }
+  .amp{
+    display:block;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:22px;
+    color:var(--rose);
+    margin:4px 0;
+  }
+  .hero-date{
+    font-family:'Cormorant Garamond', serif;
+    font-size:19px;
+    letter-spacing:0.08em;
+    color:var(--charcoal);
+    margin-top:10px;
+  }
+  .scroll-cue{
+    margin-top:56px;
+    font-size:11px;
+    letter-spacing:0.2em;
+    color:var(--charcoal);
+    opacity:0.45;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+  }
+  .scroll-cue .stem{
+    width:1px; height:34px;
+    background:currentColor;
+    animation:stem 2s ease-in-out infinite;
+  }
+  @keyframes stem{
+    0%,100%{ transform:scaleY(1); opacity:0.45; }
+    50%{ transform:scaleY(0.55); opacity:0.9; }
+  }
+  @media (prefers-reduced-motion: reduce){ .scroll-cue .stem{ animation:none; } }
+
+  /* ---------- MESSAGE ---------- */
+  .message{
+    background:var(--forest-deep);
+    color:var(--sage);
+    text-align:center;
+  }
+  .message .eyebrow{ color:var(--gold); }
+  .message p{
+    font-family:'Noto Serif KR', serif;
+    font-size:16.5px;
+    line-height:2.05;
+    color:#F1EEE5;
+    margin-top:26px;
+    font-weight:400;
+  }
+  .message .sign{
+    margin-top:34px;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:17px;
+    color:var(--rose);
+    letter-spacing:0.04em;
+  }
+  .divider{
+    width:34px; height:1px;
+    background:var(--gold);
+    margin:26px auto 0;
+    opacity:0.6;
+  }
+
+  /* ---------- CALENDAR ---------- */
+  .calendar-wrap{
+    display:flex; justify-content:center; margin-top:34px;
+  }
+  .calendar{
+    width:100%;
+    max-width:320px;
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:22px 18px 26px;
+    background:#fff;
+  }
+  .cal-title{
+    text-align:center;
+    font-family:'Noto Serif KR', serif;
+    font-size:15px;
+    color:var(--forest-deep);
+    letter-spacing:0.05em;
+    margin-bottom:16px;
+  }
+  .cal-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    row-gap:10px;
+    text-align:center;
+    font-size:12.5px;
+  }
+  .cal-grid .dow{
+    color:var(--gold);
+    font-weight:500;
+    font-size:11px;
+    padding-bottom:6px;
+  }
+  .cal-grid .d{ color:var(--charcoal); opacity:0.8; }
+  .cal-grid .d.blank{ visibility:hidden; }
+  .cal-grid .d.highlight{
+    position:relative;
+    color:#fff;
+    font-weight:600;
+  }
+  .cal-grid .d.highlight span{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:24px; height:24px;
+    background:var(--forest);
+    border-radius:50%;
+  }
+  .detail-row{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:22px;
+    font-size:14.5px;
+    color:var(--forest-deep);
+    font-weight:500;
+    letter-spacing:0.02em;
+  }
+  .detail-row .divider-dot{ opacity:0.4; }
+
+  /* ---------- LOCATION ---------- */
+  .location{ text-align:center; }
+  .venue-name{
+    font-family:'Noto Serif KR', serif;
+    font-size:21px;
+    margin-top:20px;
+    color:var(--forest-deep);
+  }
+  .venue-addr{
+    font-size:14px;
+    margin-top:8px;
+    color:var(--charcoal);
+    opacity:0.75;
+    line-height:1.6;
+  }
+  .map-box{
+    margin-top:24px;
+    height:170px;
+    border-radius:2px;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 22px, rgba(58,79,63,0.07) 23px),
+      repeating-linear-gradient(90deg, transparent, transparent 22px, rgba(58,79,63,0.07) 23px),
+      var(--sage);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--forest);
+    font-size:12px;
+    letter-spacing:0.1em;
+  }
+  .map-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:18px;
+  }
+  .map-buttons a{
+    flex:1;
+    text-align:center;
+    padding:13px 0;
+    font-size:13px;
+    letter-spacing:0.04em;
+    text-decoration:none;
+    color:var(--forest-deep);
+    border:1px solid var(--forest-deep);
+    border-radius:2px;
+    transition:background 0.25s ease, color 0.25s ease;
+  }
+  .map-buttons a:active{ background:var(--forest-deep); color:#fff; }
+  .transit-note{
+    margin-top:20px;
+    font-size:12.5px;
+    color:var(--charcoal);
+    opacity:0.65;
+    line-height:1.8;
+    text-align:left;
+    border-top:1px solid var(--line);
+    padding-top:16px;
+  }
+  .transit-note b{ color:var(--forest-deep); font-weight:600; }
+
+  /* ---------- GALLERY ---------- */
+  .gallery{ background:var(--forest-deep); }
+  .gallery .eyebrow{ color:var(--gold); }
+  .gallery-note{
+    text-align:center;
+    color:#F1EEE5;
+    opacity:0.55;
+    font-size:12.5px;
+    margin-top:12px;
+    letter-spacing:0.03em;
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:24px;
+  }
+  .gallery-grid div{
+    aspect-ratio:3/4;
+    border-radius:1px;
+  }
+  .gallery-grid div:nth-child(1){ background:linear-gradient(160deg,#4B5F4E,#2E3F32); }
+  .gallery-grid div:nth-child(2){ background:linear-gradient(160deg,#8C7059,#5C4938); grid-row: span 2; }
+  .gallery-grid div:nth-child(3){ background:linear-gradient(160deg,#9B8069,#6C5642); }
+  .gallery-grid div:nth-child(4){ background:linear-gradient(160deg,#556A57,#354A39); }
+
+  /* ---------- ACCOUNT / RSVP ---------- */
+  .accordion{ margin-top:28px; }
+  .acc-item{
+    border-top:1px solid var(--line);
+  }
+  .acc-item:last-child{ border-bottom:1px solid var(--line); }
+  .acc-head{
+    width:100%;
+    background:none;
+    border:none;
+    padding:18px 4px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:14.5px;
+    font-weight:500;
+    color:var(--forest-deep);
+    cursor:pointer;
+    letter-spacing:0.02em;
+  }
+  .acc-head .plus{
+    font-size:16px;
+    color:var(--gold);
+    transition:transform 0.3s ease;
+  }
+  .acc-item.open .acc-head .plus{ transform:rotate(45deg); }
+  .acc-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.4s ease;
+  }
+  .acc-item.open .acc-body{ max-height:260px; }
+  .acc-inner{ padding:0 4px 18px; }
+  .acct-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 14px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:2px;
+    margin-bottom:8px;
+    font-size:13px;
+  }
+  .acct-row .who{ color:var(--charcoal); opacity:0.6; margin-bottom:2px; font-size:11.5px; }
+  .acct-row .num{ color:var(--forest-deep); font-weight:500; letter-spacing:0.02em; }
+  .copy-btn{
+    border:1px solid var(--forest-deep);
+    background:none;
+    color:var(--forest-deep);
+    font-size:11.5px;
+    padding:6px 10px;
+    border-radius:2px;
+    cursor:pointer;
+    letter-spacing:0.03em;
+    white-space:nowrap;
+  }
+  .copy-btn.copied{ background:var(--forest-deep); color:#fff; }
+
+  /* ---------- FOOTER ---------- */
+  .footer{
+    text-align:center;
+    padding:70px 32px 60px;
+    background:var(--ivory);
+  }
+  .footer .heart{
+    width:14px; height:14px;
+    margin:0 auto 22px;
+    opacity:0.55;
+  }
+  .footer p{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:16px;
+    color:var(--forest-deep);
+    letter-spacing:0.03em;
+  }
+  .footer .credit{
+    margin-top:40px;
+    font-family:'Noto Sans KR', sans-serif;
+    font-style:normal;
+    font-size:10.5px;
+    color:var(--charcoal);
+    opacity:0.35;
+    letter-spacing:0.06em;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="wreath" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#B08D57" stroke-width="1.1" stroke-linecap="round" fill="none" opacity="0.85">
+        <path d="M110 18 C 60 30, 30 70, 26 110 C 22 150, 45 185, 80 200"/>
+        <path d="M110 18 C 160 30, 190 70, 194 110 C 198 150, 175 185, 140 200"/>
+        <path d="M40 60 C 55 55, 62 65, 58 78 C 54 65, 45 62, 40 60 Z"/>
+        <path d="M30 95 C 46 92, 52 103, 46 115 C 42 102, 34 98, 30 95 Z"/>
+        <path d="M35 135 C 51 135, 55 147, 47 157 C 45 144, 39 139, 35 135 Z"/>
+        <path d="M180 60 C 165 55, 158 65, 162 78 C 166 65, 175 62, 180 60 Z"/>
+        <path d="M190 95 C 174 92, 168 103, 174 115 C 178 102, 186 98, 190 95 Z"/>
+        <path d="M185 135 C 169 135, 165 147, 173 157 C 175 144, 181 139, 185 135 Z"/>
+        <circle cx="60" cy="185" r="2.4" fill="#C79A8E" stroke="none"/>
+        <circle cx="160" cy="185" r="2.4" fill="#C79A8E" stroke="none"/>
+        <circle cx="72" cy="196" r="1.8" fill="#C79A8E" stroke="none"/>
+        <circle cx="148" cy="196" r="1.8" fill="#C79A8E" stroke="none"/>
+      </g>
+    </svg>
+    <div class="eyebrow">The Wedding Of</div>
+    <h1 class="hero-names">김민준<span class="amp">그리고</span>이서연</h1>
+    <div class="hero-date">2026. 10. 17. SAT · P.M 2:00</div>
+    <div class="scroll-cue"><span>SCROLL</span><span class="stem"></span></div>
+  </section>
+
+  <!-- MESSAGE -->
+  <section class="section message fade-in">
+    <div class="eyebrow">Invitation</div>
+    <p>
+      함께 한 시간이 쌓여<br>
+      이제는 같은 곳을 바라보며<br>
+      걷기로 했습니다.<br><br>
+      바쁘시더라도 오셔서<br>
+      두 사람의 새로운 시작을<br>
+      따뜻하게 지켜봐 주시면<br>
+      더없는 기쁨이겠습니다.
+    </p>
+    <div class="sign">민준 · 서연 올림</div>
+  </section>
+
+  <!-- CALENDAR / DETAILS -->
+  <section class="section fade-in">
+    <div class="eyebrow" style="color:var(--gold);">When</div>
+    <div class="calendar-wrap">
+      <div class="calendar">
+        <div class="cal-title">2026. 10월</div>
+        <div class="cal-grid">
+          <div class="dow">일</div><div class="dow">월</div><div class="dow">화</div><div class="dow">수</div><div class="dow">목</div><div class="dow">금</div><div class="dow">토</div>
+          <div class="d blank"></div><div class="d blank"></div><div class="d blank"></div><div class="d blank"></div><div class="d">1</div><div class="d">2</div><div class="d">3</div>
+          <div class="d">4</div><div class="d">5</div><div class="d">6</div><div class="d">7</div><div class="d">8</div><div class="d">9</div><div class="d">10</div>
+          <div class="d">11</div><div class="d">12</div><div class="d">13</div><div class="d">14</div><div class="d">15</div><div class="d">16</div><div class="d highlight"><span>17</span></div>
+          <div class="d">18</div><div class="d">19</div><div class="d">20</div><div class="d">21</div><div class="d">22</div><div class="d">23</div><div class="d">24</div>
+        </div>
+      </div>
+    </div>
+    <div class="detail-row">
+      <span>2026년 10월 17일 토요일</span><span class="divider-dot">·</span><span>오후 2시</span>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="section location fade-in">
+    <div class="eyebrow" style="color:var(--gold);">Where</div>
+    <div class="venue-name">그랜드 하람 컨벤션 3F 그랜드홀</div>
+    <div class="venue-addr">서울특별시 강남구 테헤란로 123<br>(2호선 강남역 3번 출구 도보 5분)</div>
+    <div class="map-box">지도 영역 · 실제 지도로 교체 예정</div>
+    <div class="map-buttons">
+      <a href="https://map.naver.com" target="_blank" rel="noopener">네이버지도</a>
+      <a href="https://map.kakao.com" target="_blank" rel="noopener">카카오맵</a>
+    </div>
+    <div class="transit-note">
+      <b>지하철</b> · 2호선 강남역 3번 출구에서 도보 5분<br>
+      <b>버스</b> · 강남역 정류장 하차 (146, 341, 360)<br>
+      <b>주차</b> · 건물 지하 1~3층 3시간 무료
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section gallery fade-in">
+    <div class="eyebrow">Gallery</div>
+    <div class="gallery-note">사진은 준비되는 대로 채워질 예정이에요</div>
+    <div class="gallery-grid">
+      <div></div><div></div><div></div><div></div>
+    </div>
+  </section>
+
+  <!-- ACCOUNT -->
+  <section class="section fade-in">
+    <div class="eyebrow" style="color:var(--gold);">Gift</div>
+    <p style="text-align:center; margin-top:16px; font-size:13.5px; color:var(--charcoal); opacity:0.75; line-height:1.8;">
+      참석이 어려우신 분들을 위해<br>마음을 전하실 수 있는 계좌를 안내드립니다
+    </p>
+    <div class="accordion">
+      <div class="acc-item">
+        <button class="acc-head" onclick="toggleAcc(this)">신랑측 계좌 보기 <span class="plus">＋</span></button>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div class="acct-row">
+              <div><div class="who">신랑 김민준</div><div class="num">국민은행 123456-01-123456</div></div>
+              <button class="copy-btn" onclick="copyAcct(this,'123456-01-123456')">복사</button>
+            </div>
+            <div class="acct-row">
+              <div><div class="who">신랑 父 김철수</div><div class="num">신한은행 110-987-654321</div></div>
+              <button class="copy-btn" onclick="copyAcct(this,'110-987-654321')">복사</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" onclick="toggleAcc(this)">신부측 계좌 보기 <span class="plus">＋</span></button>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div class="acct-row">
+              <div><div class="who">신부 이서연</div><div class="num">우리은행 1002-345-678901</div></div>
+              <button class="copy-btn" onclick="copyAcct(this,'1002-345-678901')">복사</button>
+            </div>
+            <div class="acct-row">
+              <div><div class="who">신부 母 박영희</div><div class="num">하나은행 234-567890-12345</div></div>
+              <button class="copy-btn" onclick="copyAcct(this,'234-567890-12345')">복사</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer fade-in">
+    <svg class="heart" viewBox="0 0 24 24" fill="#C79A8E"><path d="M12 21s-7.5-4.7-10-9.3C.4 8.5 2 5 5.5 5c2 0 3.5 1.2 4.5 2.8C11 6.2 12.5 5 14.5 5 18 5 19.6 8.5 22 11.7 19.5 16.3 12 21 12 21z"/></svg>
+    <p>민준 그리고 서연,<br>두 사람의 새 출발을 응원해 주셔서 감사합니다</p>
+    <div class="credit">MOBILE INVITATION · DRAFT VERSION</div>
+  </section>
+
+</div>
+
+<script>
+  // scroll reveal
+  const els = document.querySelectorAll('.fade-in');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); } });
+  }, { threshold: 0.15 });
+  els.forEach(el=> io.observe(el));
+
+  // accordion
+  function toggleAcc(btn){
+    const item = btn.closest('.acc-item');
+    item.classList.toggle('open');
+  }
+
+  // copy account number
+  function copyAcct(btn, text){
+    navigator.clipboard.writeText(text).then(()=>{
+      const original = btn.textContent;
+      btn.textContent = '복사됨';
+      btn.classList.add('copied');
+      setTimeout(()=>{ btn.textContent = original; btn.classList.remove('copied'); }, 1500);
+    });
+  }
+</script>
+</body>
+</html>
