@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>민준 · 서연 결혼식에 초대합니다</title>
+<title>재원 · 시은 결혼식에 초대합니다</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
@@ -154,6 +154,24 @@
     opacity:0.6;
   }
 
+  /* ---------- FAMILY ---------- */
+  .family{
+    background:var(--forest-deep);
+    padding-top:0;
+    text-align:center;
+  }
+  .family-line{
+    font-family:'Noto Serif KR', serif;
+    font-size:15px;
+    color:#EDEAE0;
+    line-height:2.1;
+    letter-spacing:0.01em;
+  }
+  .family-line b{
+    font-weight:600;
+    color:var(--rose);
+  }
+
   /* ---------- CALENDAR ---------- */
   .calendar-wrap{
     display:flex; justify-content:center; margin-top:34px;
@@ -291,14 +309,18 @@
     gap:8px;
     margin-top:24px;
   }
-  .gallery-grid div{
+  .gallery-grid img{
+    width:100%;
+    height:100%;
     aspect-ratio:3/4;
+    object-fit:cover;
+    display:block;
     border-radius:1px;
   }
-  .gallery-grid div:nth-child(1){ background:linear-gradient(160deg,#4B5F4E,#2E3F32); }
-  .gallery-grid div:nth-child(2){ background:linear-gradient(160deg,#8C7059,#5C4938); grid-row: span 2; }
-  .gallery-grid div:nth-child(3){ background:linear-gradient(160deg,#9B8069,#6C5642); }
-  .gallery-grid div:nth-child(4){ background:linear-gradient(160deg,#556A57,#354A39); }
+  .gallery-grid img.tall{
+    aspect-ratio:auto;
+    grid-row:span 2;
+  }
 
   /* ---------- ACCOUNT / RSVP ---------- */
   .accordion{ margin-top:28px; }
@@ -411,8 +433,8 @@
       </g>
     </svg>
     <div class="eyebrow">The Wedding Of</div>
-    <h1 class="hero-names">김민준<span class="amp">그리고</span>이서연</h1>
-    <div class="hero-date">2026. 10. 17. SAT · P.M 2:00</div>
+    <h1 class="hero-names">최재원<span class="amp">그리고</span>이시은</h1>
+    <div class="hero-date">2026. 12. 05. SAT · P.M 6:00</div>
     <div class="scroll-cue"><span>SCROLL</span><span class="stem"></span></div>
   </section>
 
@@ -428,7 +450,15 @@
       따뜻하게 지켜봐 주시면<br>
       더없는 기쁨이겠습니다.
     </p>
-    <div class="sign">민준 · 서연 올림</div>
+    <div class="sign">재원 · 시은 올림</div>
+  </section>
+
+  <!-- FAMILY -->
+  <section class="section family fade-in">
+    <div class="divider" style="margin-bottom:26px;"></div>
+    <div class="family-line">최영수 · 김승현의 장남 <b>최재원</b></div>
+    <div class="family-line">이춘우 · 강명옥의 차녀 <b>이시은</b></div>
+    <div class="divider" style="margin-top:26px;"></div>
   </section>
 
   <!-- CALENDAR / DETAILS -->
@@ -436,44 +466,50 @@
     <div class="eyebrow" style="color:var(--gold);">When</div>
     <div class="calendar-wrap">
       <div class="calendar">
-        <div class="cal-title">2026. 10월</div>
+        <div class="cal-title">2026. 12월</div>
         <div class="cal-grid">
           <div class="dow">일</div><div class="dow">월</div><div class="dow">화</div><div class="dow">수</div><div class="dow">목</div><div class="dow">금</div><div class="dow">토</div>
-          <div class="d blank"></div><div class="d blank"></div><div class="d blank"></div><div class="d blank"></div><div class="d">1</div><div class="d">2</div><div class="d">3</div>
-          <div class="d">4</div><div class="d">5</div><div class="d">6</div><div class="d">7</div><div class="d">8</div><div class="d">9</div><div class="d">10</div>
-          <div class="d">11</div><div class="d">12</div><div class="d">13</div><div class="d">14</div><div class="d">15</div><div class="d">16</div><div class="d highlight"><span>17</span></div>
-          <div class="d">18</div><div class="d">19</div><div class="d">20</div><div class="d">21</div><div class="d">22</div><div class="d">23</div><div class="d">24</div>
+          <div class="d blank"></div><div class="d blank"></div><div class="d">1</div><div class="d">2</div><div class="d">3</div><div class="d">4</div><div class="d highlight"><span>5</span></div>
+          <div class="d">6</div><div class="d">7</div><div class="d">8</div><div class="d">9</div><div class="d">10</div><div class="d">11</div><div class="d">12</div>
+          <div class="d">13</div><div class="d">14</div><div class="d">15</div><div class="d">16</div><div class="d">17</div><div class="d">18</div><div class="d">19</div>
         </div>
       </div>
     </div>
     <div class="detail-row">
-      <span>2026년 10월 17일 토요일</span><span class="divider-dot">·</span><span>오후 2시</span>
+      <span>2026년 12월 5일 토요일</span><span class="divider-dot">·</span><span>오후 6시</span>
     </div>
   </section>
 
   <!-- LOCATION -->
   <section class="section location fade-in">
     <div class="eyebrow" style="color:var(--gold);">Where</div>
-    <div class="venue-name">그랜드 하람 컨벤션 3F 그랜드홀</div>
-    <div class="venue-addr">서울특별시 강남구 테헤란로 123<br>(2호선 강남역 3번 출구 도보 5분)</div>
+    <div class="venue-name">서울 드래곤시티 그랜드 머큐어</div>
+    <div class="venue-addr">2층 라데부홀<br>서울특별시 용산구 청파로20길 95</div>
     <div class="map-box">지도 영역 · 실제 지도로 교체 예정</div>
     <div class="map-buttons">
-      <a href="https://map.naver.com" target="_blank" rel="noopener">네이버지도</a>
-      <a href="https://map.kakao.com" target="_blank" rel="noopener">카카오맵</a>
+      <a href="https://map.naver.com/p/search/서울드래곤시티%20그랜드머큐어" target="_blank" rel="noopener">네이버지도</a>
+      <a href="https://map.kakao.com/?q=서울드래곤시티%20그랜드머큐어" target="_blank" rel="noopener">카카오맵</a>
     </div>
     <div class="transit-note">
-      <b>지하철</b> · 2호선 강남역 3번 출구에서 도보 5분<br>
-      <b>버스</b> · 강남역 정류장 하차 (146, 341, 360)<br>
-      <b>주차</b> · 건물 지하 1~3층 3시간 무료
+      <b>지하철</b> · 1호선 용산역 3번 출구, 도보 약 5분<br>
+      <b>지하철</b> · 4호선 신용산역 5번 출구, 도보 약 10분<br>
+      <b>KTX·ITX</b> · 용산역, 도보 약 5분<br>
+      <b>주차</b> · 서울 드래곤시티 호텔 주차장 이용 (하객 4시간 무료주차, 주차권은 예식장 안내데스크에서 확인)
     </div>
   </section>
 
   <!-- GALLERY -->
   <section class="section gallery fade-in">
     <div class="eyebrow">Gallery</div>
-    <div class="gallery-note">사진은 준비되는 대로 채워질 예정이에요</div>
     <div class="gallery-grid">
-      <div></div><div></div><div></div><div></div>
+      <img src="photos/photo6.jpg" alt="사막에서 찍은 커플 사진">
+      <img src="photos/photo5.jpg" alt="스튜디오 하트 사진" class="tall">
+      <img src="photos/photo2.jpg" alt="블루마운틴 여행 사진">
+      <img src="photos/photo3.jpg" alt="노을을 보는 뒷모습 사진">
+      <img src="photos/photo8.jpg" alt="일본 여행 사진">
+      <img src="photos/photo7.jpg" alt="셀피 사진">
+      <img src="photos/photo1.jpg" alt="레스토랑 데이트 사진">
+      <img src="photos/photo4.jpg" alt="꽃다발과 함께 찍은 사진">
     </div>
   </section>
 
@@ -489,11 +525,11 @@
         <div class="acc-body">
           <div class="acc-inner">
             <div class="acct-row">
-              <div><div class="who">신랑 김민준</div><div class="num">국민은행 123456-01-123456</div></div>
+              <div><div class="who">신랑 최재원</div><div class="num">국민은행 123456-01-123456</div></div>
               <button class="copy-btn" onclick="copyAcct(this,'123456-01-123456')">복사</button>
             </div>
             <div class="acct-row">
-              <div><div class="who">신랑 父 김철수</div><div class="num">신한은행 110-987-654321</div></div>
+              <div><div class="who">신랑 父 최영수</div><div class="num">신한은행 110-987-654321</div></div>
               <button class="copy-btn" onclick="copyAcct(this,'110-987-654321')">복사</button>
             </div>
           </div>
@@ -504,11 +540,11 @@
         <div class="acc-body">
           <div class="acc-inner">
             <div class="acct-row">
-              <div><div class="who">신부 이서연</div><div class="num">우리은행 1002-345-678901</div></div>
+              <div><div class="who">신부 이시은</div><div class="num">우리은행 1002-345-678901</div></div>
               <button class="copy-btn" onclick="copyAcct(this,'1002-345-678901')">복사</button>
             </div>
             <div class="acct-row">
-              <div><div class="who">신부 母 박영희</div><div class="num">하나은행 234-567890-12345</div></div>
+              <div><div class="who">신부 母 강명옥</div><div class="num">하나은행 234-567890-12345</div></div>
               <button class="copy-btn" onclick="copyAcct(this,'234-567890-12345')">복사</button>
             </div>
           </div>
@@ -520,7 +556,7 @@
   <!-- FOOTER -->
   <section class="footer fade-in">
     <svg class="heart" viewBox="0 0 24 24" fill="#C79A8E"><path d="M12 21s-7.5-4.7-10-9.3C.4 8.5 2 5 5.5 5c2 0 3.5 1.2 4.5 2.8C11 6.2 12.5 5 14.5 5 18 5 19.6 8.5 22 11.7 19.5 16.3 12 21 12 21z"/></svg>
-    <p>민준 그리고 서연,<br>두 사람의 새 출발을 응원해 주셔서 감사합니다</p>
+    <p>재원 그리고 시은,<br>두 사람의 새 출발을 응원해 주셔서 감사합니다</p>
     <div class="credit">MOBILE INVITATION · DRAFT VERSION</div>
   </section>
 
