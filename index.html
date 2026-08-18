@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f3">
+  <title>최재원 ♥ 이시은 결혼합니다</title>
+  <meta name="description" content="2026년 12월 5일, 최재원 이시은 결혼식에 초대합니다.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="invitation">
+    <section class="hero section-cream" aria-label="메인 초대장">
+      <div class="names"><span>최재원</span><span>이시은</span></div>
+      <div class="portrait-wrap">
+        <div class="arc-title">OUR LOVE STORY</div>
+        <img class="portrait" src="photo-main.webp" alt="최재원과 이시은의 웨딩 사진">
+      </div>
+      <p class="english-copy">you are invited to join in<br>our celebration</p>
+      <p class="wedding-date">2026.12.05.SAT.06:00PM</p>
+    </section>
+
+    <section class="intro reveal">
+      <p class="eyebrow">초대합니다</p>
+      <h1>최재원 <span>그리고</span> 이시은</h1>
+      <p class="message">서로 다른 두 사람이 사랑으로 만나<br>이제 하나의 길을 걸어가려 합니다.<br><br>귀한 걸음 하시어 따뜻한 축복으로<br>함께해 주세요.</p>
+      <div class="family">
+        <p><b>최영수 · 김승현</b><small>의 장남</small> 최재원</p>
+        <p><b>이춘우 · 강명옥</b><small>의 차녀</small> 이시은</p>
+      </div>
+    </section>
+
+    <section class="photo-section reveal">
+      <img src="photo-gallery.webp" alt="신랑 신부 웨딩 사진" loading="lazy">
+    </section>
+
+    <section class="schedule section-cream reveal">
+      <p class="eyebrow">예식 일정</p>
+      <h2>2026년 12월 5일 토요일 오후 6시</h2>
+      <div class="calendar" aria-label="2026년 12월 달력">
+        <div class="month">12월</div>
+        <div class="week"><span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div>
+        <div class="days" id="calendarDays"></div>
+      </div>
+      <p class="countdown" id="countdown"></p>
+    </section>
+
+    <section class="location reveal">
+      <p class="eyebrow">예식 장소 안내</p>
+      <h2>드래곤시티 그랜드머큐어<br>2층 랑데부홀</h2>
+      <p class="address">서울 용산구 청파로20길 95</p>
+      <div class="map-placeholder" aria-hidden="true"><span>DRAGON CITY</span><i></i></div>
+      <div class="map-links">
+        <a href="https://map.naver.com/p/search/%EB%93%9C%EB%9E%98%EA%B3%A4%EC%8B%9C%ED%8B%B0%20%EA%B7%B8%EB%9E%9C%EB%93%9C%EB%A8%B8%ED%81%90%EC%96%B4" target="_blank" rel="noreferrer">네이버지도</a>
+        <a href="https://www.tmap.co.kr/" target="_blank" rel="noreferrer">T MAP</a>
+        <a href="https://map.kakao.com/link/search/%EB%93%9C%EB%9E%98%EA%B3%A4%EC%8B%9C%ED%8B%B0%20%EA%B7%B8%EB%9E%9C%EB%93%9C%EB%A8%B8%ED%81%90%EC%96%B4" target="_blank" rel="noreferrer">카카오내비</a>
+      </div>
+    </section>
+
+    <section class="contact section-cream reveal">
+      <p class="eyebrow">마음 전하실 곳</p>
+      <p class="message">전해주시는 따뜻한 축하의 마음을 오래도록 간직하며<br>행복한 모습으로 보답하며 살겠습니다.</p>
+      <div class="accordions">
+        <details>
+          <summary>신랑 측</summary>
+          <div class="account"><p>신랑 최재원 <a href="tel:01000000000">연락하기</a></p><button data-copy="은행 000-0000-0000 최재원">계좌번호 복사</button></div>
+        </details>
+        <details>
+          <summary>신부 측</summary>
+          <div class="account"><p>신부 이시은 <a href="tel:01000000000">연락하기</a></p><button data-copy="은행 000-0000-0000 이시은">계좌번호 복사</button></div>
+        </details>
+      </div>
+    </section>
+
+    <footer>
+      <button class="share" id="shareButton">링크 복사</button>
+      <p>JAEWON &amp; SIEUN</p>
+    </footer>
+  </main>
+  <div class="toast" id="toast" role="status">링크가 복사되었습니다</div>
+  <script src="script.js"></script>
+</body>
+</html>
